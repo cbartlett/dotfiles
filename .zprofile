@@ -1,5 +1,5 @@
 # make homebrew work
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(brew shellenv)"
 
 # paging for things like git log
 # * -i - ignore case when searching (but respect case if search term contains uppercase letters)
