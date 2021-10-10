@@ -58,4 +58,4 @@ function hcd() {
 }
 
 # adds config command for versioning dotfiles https://www.atlassian.com/git/tutorials/dotfiles
-echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'"
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
