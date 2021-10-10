@@ -6,6 +6,7 @@
     signingkey = D8E33B47
 [commit]
     gpgsign = true
+    verbose = true
 [rerere]
     enabled = true
     autoupdate = true
