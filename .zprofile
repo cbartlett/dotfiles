@@ -1,5 +1,10 @@
 # make homebrew work
-eval "$(brew shellenv)"
+if [ -d "/opt/homebrew" ]
+then
+  eval "$(/opt/homebrew/bin/brew shellenv)" # M1 Mac
+else
+  eval "$(/usr/local/bin/brew shellenv)" # Intel Mac
+fi
 
 # paging for things like git log
 # * -i - ignore case when searching (but respect case if search term contains uppercase letters)
