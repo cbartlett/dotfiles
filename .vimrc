@@ -98,3 +98,7 @@ function! ToggleWrap()
   endif
 endfunction
 map <leader>w :call ToggleWrap()<CR>
+
+" change the location that stuff splits
+set splitbelow
+set splitright
