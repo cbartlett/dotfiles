@@ -22,18 +22,6 @@ export TERM=xterm-256color
 # shortcuts
 alias be='bundle exec'
 
-# git shortcuts
-alias gap='git add -p'
-alias gb='git branch'
-alias gc='git commit -v'
-alias gco='git checkout'
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias gp='git push'
-alias gpr='git pull --rebase'
-alias gst='git status'
-alias reset-authors='git commit --amend --reset-author -C HEAD'
-
 # fix bigsur ruby
 # https://github.com/rbenv/ruby-build/issues/1747
 export CFLAGS="-Wno-error=implicit-function-declaration"
