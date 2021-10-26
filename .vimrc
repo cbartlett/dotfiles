@@ -1,6 +1,9 @@
 " vim-plug
 call plug#begin()
 
+" change from single to multiline blocks
+Plug 'jgdavey/vim-blockle'
+
 " distraction-free writing
 Plug 'junegunn/goyo.vim'
 
