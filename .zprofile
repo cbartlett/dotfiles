@@ -12,6 +12,12 @@ then
   alias vim='nvim'
 fi
 
+# support local overrides
+LOCAL_CONFIG="$HOME/.zprofile.local"
+if test -f "$LOCAL_CONFIG"; then
+  source $LOCAL_CONFIG
+fi
+
 # paging for things like git log
 # * -i - ignore case when searching (but respect case if search term contains uppercase letters)
 # * -X - do not clear screen on exit
