@@ -105,3 +105,6 @@ map <leader>w :call ToggleWrap()<CR>
 " change the location that stuff splits
 set splitbelow
 set splitright
+
+" don't show matches above command line
+set nowildmenu
