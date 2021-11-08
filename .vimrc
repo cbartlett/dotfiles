@@ -1,6 +1,9 @@
 " vim-plug
 call plug#begin()
 
+" highlight trailing whitespace
+Plug 'csexton/trailertrash.vim'
+
 " change from single to multiline blocks
 Plug 'jgdavey/vim-blockle'
 
