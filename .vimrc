@@ -37,6 +37,12 @@ Plug 'tpope/vim-sensible'
 " Unix utilities
 Plug 'tpope/vim-eunuch'
 
+" markdown
+Plug 'tpope/vim-markdown'
+
+" fenced code blocks in markdown
+let g:markdown_fenced_languages = ['javascript', 'html', 'ruby', 'vim', 'bash']
+
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'
@@ -46,7 +52,6 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-haml'
-Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-pathogen'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-ragtag'
