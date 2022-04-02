@@ -6,6 +6,12 @@ else
   eval "$(/usr/local/bin/brew shellenv)" # Intel Mac
 fi
 
+# alias nvim to vim if it exists
+if command -v nvim &> /dev/null
+then
+  alias vim='nvim'
+fi
+
 # paging for things like git log
 # * -i - ignore case when searching (but respect case if search term contains uppercase letters)
 # * -X - do not clear screen on exit
