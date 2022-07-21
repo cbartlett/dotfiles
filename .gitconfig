@@ -1,5 +1,6 @@
 [core]
     excludesFile = ~/.gitignore
+    editor = nvim
 [user]
     name = Colin Bartlett
     email = colin@colinabartlett.com
