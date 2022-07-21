@@ -1,8 +1,40 @@
 " vim-plug
 call plug#begin()
 
+" markdown checkboxes
+augroup MappyTime
+  autocmd!
+  autocmd FileType markdown nnoremap <buffer> <silent> - :call winrestview(<SID>toggle('^\s*-\s*\[\zs.\ze\]', {' ': 'x', 'x': ' '}))<cr>
+augroup END
+
+function s:toggle(pattern, dict, ...)
+  let view = winsaveview()
+  execute 'keeppatterns s/' . a:pattern . '/\=get(a:dict, submatch(0), a:0 ? a:1 : " ")/e'
+  return view
+endfunction
+
+Plug 'jkramer/vim-checkbox'
+
+" SQL Formatter, depends on python sqlformat
+" %!sqlformat -k upper -i lower -
+
+" multi cursors
+Plug 'mg979/vim-visual-multi'
+
+" GitHub Copilot
+Plug 'github/copilot.vim'
+
+" Set location of requird node version
+let g:copilot_node_command = '~/.nvm/versions/node/v16.15.0/bin/node'
+
+" copy current path/line
+map <leader>l :let @*=fnamemodify(expand("%"), ":~:.") . ":" . line(".")<CR>
+
 " vertical alignment
 Plug 'godlygeek/tabular'
+
+" css colors
+Plug 'ap/vim-css-color'
 
 " automatically vertical align tables
 " https://vimtricks.com/p/vertical-alignment/
@@ -76,6 +108,9 @@ Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'shime/vim-livedown'
 nmap gm :LivedownToggle<CR>
 
+" Highlight syntax in Markdown
+let g:markdown_fenced_languages = ['html', 'ruby', 'vim']
+
 call plug#end()
 
 colorscheme vividchalk
@@ -134,3 +169,18 @@ set splitright
 
 " don't show matches above command line
 set nowildmenu
+
+
+" Copy from Quickfix to Args with :Qargs
+" https://vimtricks.com/p/vimtrick-copy-from-quickfix-to-the/
+command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()
+function! QuickfixFilenames()
+  let buffer_numbers = {}
+  for quickfix_item in getqflist()
+    let buffer_numbers[quickfix_item['bufnr']] = bufname(quickfix_item['bufnr'])
+  endfor
+  return join(map(values(buffer_numbers), 'fnameescape(v:val)'))
+endfunction
+
+" Gca for Git Co Author
+command! -nargs=+ Gca :r!git log -n100 --pretty=format:"\%an <\%ae>" | grep -i '<args>' | head -1 | xargs echo "Co-authored-by:"
