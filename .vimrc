@@ -128,6 +128,7 @@ set undofile
 " run Dispatch with d-enter
 " nmap <script> d<CR> <SID>:Dispatch<CR>
 nmap d<CR> :Dispatch<CR>
+nmap f<CR> :.Dispatch<CR>
 
 " blockle?
 " 
