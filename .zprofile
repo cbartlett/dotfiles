@@ -1,3 +1,7 @@
+# fuck spring
+
+export DISABLE_SPRING=true
+
 # make homebrew work
 if [ -d "/opt/homebrew" ]
 then
