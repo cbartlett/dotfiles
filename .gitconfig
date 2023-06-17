@@ -1,6 +1,7 @@
 [core]
     excludesFile = ~/.gitignore
     editor = nvim
+    attributesfile = ~/.gitattributes
 [user]
     name = Colin Bartlett
     email = colin@colinabartlett.com
@@ -21,3 +22,6 @@
     browse = !gh browse
 [pull]
 	rebase = true
+[merge "merge-structure-sql"]
+	name = Rails structure.sql merge driver
+	driver = git-merge-structure-sql %A %O %B
